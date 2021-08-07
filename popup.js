@@ -1,7 +1,7 @@
 function saveLinks () {
     var links = [];
 
-    chrome.tabs.query({}, function(tabs) {
+    chrome.tabs.query({ currentWindow: true }, function(tabs) {
         tabs.forEach(function(tab) {
             links.push(tab.url + "\n");
         });
